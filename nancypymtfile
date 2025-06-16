@@ -1,0 +1,69 @@
+# 💼 Agent Payment Analytics & Integration Platform
+
+A full-stack simulation of an agent payment system integrating Oracle EBS-style backend with Spring Boot REST APIs, ETL pipelines on Azure, and real-time analytics dashboards.
+
+---
+
+## 🛠️ Tech Stack
+
+- **ERP Backend:** Oracle PL/SQL, Oracle Forms, WebADI, BI Publisher  
+- **API Layer:** Spring Boot, REST APIs, SOAP (mocked)  
+- **Integration:** Oracle SOA Suite (BPEL/OSB), Oracle Integration Cloud (OIC - simulated)  
+- **Data Analytics:** Azure Data Factory, Azure Synapse, Power BI  
+- **Cloud Tools:** Azure Blob Storage, Azure ML Studio  
+- **ML (Optional):** Python (scikit-learn), Azure AutoML  
+
+---
+
+## 🎯 Project Goals
+
+- Build a simplified agent payment lifecycle system.
+- Enable API integration between frontend and Oracle database.
+- Automate ETL to transform and load transaction data to Azure Synapse.
+- Deliver real-time dashboards for monitoring payouts, failures, and top agents.
+- (Optional) Predict late settlements using ML models.
+
+---
+
+## 📂 Modules
+
+### 1. Oracle ERP Backend
+- Agent Payment Tables: `AGENT_PAYMENTS`, `AGENT_DETAILS`
+- Oracle Forms: CRUD interface
+- PL/SQL APIs: for payout creation and status updates
+
+### 2. Spring Boot API
+- `/api/agents` – Agent registration  
+- `/api/payments` – Submit and query payments  
+- `/api/metrics` – Analytics endpoints
+
+### 3. SOA/OIC Integration
+- BPEL: Simulated disbursement flow
+- OSB: Error-handling and transformation
+- OIC: Connector mockup for future extensions
+
+### 4. Azure ETL & BI
+- Azure Data Factory pipelines: ingest & clean payment data  
+- Azure Synapse: star schema design  
+- Power BI Dashboard: KPIs like Total Disbursed, Failed Payouts, Agent Ranking
+
+### 5. ML Enhancement *(Optional)*
+- Late Payment Predictor: classification model using `scikit-learn`  
+- Deployed in Azure ML Studio and connected to the analytics pipeline
+
+---
+
+## 📊 Sample Dashboard
+
+![Dashboard](docs/dashboard_mock.png)  
+> *Top Agents, Failed Transactions, Disbursement Trends*
+
+---
+
+## 🚀 How to Run
+
+### Backend Setup
+```bash
+-- Oracle SQL
+@sql/create_tables.sql
+@sql/sample_data.sql
